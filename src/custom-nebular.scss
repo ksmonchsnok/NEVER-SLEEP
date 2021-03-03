@@ -1,0 +1,44 @@
+// Layout 
+.nb-theme-default nb-layout-header ~ .layout-container{
+    background: transparent linear-gradient(to left,  #FCF3F4 15%, #f3c8dd 95%);
+
+}
+
+// Header
+.nb-theme-default nb-layout-header{
+    background: transparent linear-gradient(0deg, #f7c6de 0%, #FCF3F4 100%) 95% 0% no-repeat padding-box !important;
+    box-shadow: 0px 3px 10px #EBB5D06D;
+}
+
+.nb-theme-default nb-layout-header nav{
+    height: 6.5rem !important;
+}
+
+// Nav-Dropdown
+
+.nb-theme-default nb-user.size-medium .user-name{
+    font-size: 1.2rem !important;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+// Sidebar
+.nb-theme-default nb-sidebar{
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+    // box-shadow: 0px 0px 10px #EBB5D06D;
+    border-radius: 1.5rem;
+    background: transparent linear-gradient(0deg, #fcc2df -5%, #FCF3F4 90%);
+}
+
+.nb-theme-default nb-menu ul.menu-items{
+    margin-top: 30% !important;
+    margin-left: 4% !important;
+}
+
+.nb-theme-default nb-menu .menu-group, .nb-theme-default nb-menu .menu-item a{
+    font-size: 1rem !important;
+    font-weight: 700;
+}
