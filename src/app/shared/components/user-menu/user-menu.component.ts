@@ -8,14 +8,17 @@ import { MediaChange, MediaObserver } from '@angular/flex-layout';
 
 
 @Component({
-  selector: 'app-nav-dropdown',
-  templateUrl: './nav-dropdown.component.html',
-  styleUrls: ['./nav-dropdown.component.scss']
+  selector: 'app-user-menu',
+  templateUrl: './user-menu.component.html',
+  styleUrls: ['./user-menu.component.scss']
 })
-export class NavDropdownComponent implements OnInit {
+export class UserMenuComponent implements OnInit {
   watcher: Subscription;
   userMenu: NbMenuItem[] = UserMenu; 
   activeMediaQuery: string | undefined;
+  userName = "Linna Li";
+  position = "Marketing";
+  imgUser = "../../../assets/images/payu.jpg"
 
   constructor(
     private mediaObserver: MediaObserver,

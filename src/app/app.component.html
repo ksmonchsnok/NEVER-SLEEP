@@ -1,0 +1,33 @@
+<nb-layout>
+    <nb-layout-header fixed>
+  
+      <div class="left-navbar"></div>
+      
+          <nb-icon icon="people-outline" class="pointer icon-user" (click)="toggleSidebar()"></nb-icon>  
+          <label class="pointer label-titleHeader" (click)="toggleSidebar()">management</label> 
+  
+          <nb-search type="rotate-layout" class="searchData" placeholder="Search..."></nb-search> 
+  
+          <nb-select placeholder="All Categories" class="selectData" [selected]="value" (selectedChange)="onSelectCatgories($event)">
+            <nb-option *ngFor="let itemCatagories of itemCatagories" 
+                        [value]='itemCatagories.value'>{{itemCatagories.name}}</nb-option>
+          </nb-select>
+          <label class="preview-onSearch" *ngIf="valueOnSearch">KeyWord : {{ valueOnSearch }}</label>
+  
+          <div class="right-navbar">
+            <nb-icon icon="settings-2-outline" class="pointer icon-setting"></nb-icon>  
+            <nb-icon icon="bell-outline" class="pointer icon-notifications"></nb-icon>  
+            <app-user-menu class="user-navbar"></app-user-menu>
+          </div>
+            
+    </nb-layout-header>
+     
+      <nb-layout-column class="colored-column-success"> 
+        <router-outlet></router-outlet>
+      </nb-layout-column>  
+  
+    <nb-sidebar  [state]="'expanded'" [responsive]="true" [compactedBreakpoints]="['xs','sm']">
+      <nb-menu [items]="sidebarMenu"></nb-menu>
+    </nb-sidebar>
+  
+  </nb-layout>

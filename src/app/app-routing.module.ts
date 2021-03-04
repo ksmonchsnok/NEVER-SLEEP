@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainLayoutsComponent } from './layouts/main-layouts/main-layouts.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ManageBillsComponent } from './pages/manage-bills/manage-bills.component';
 
 const routes: Routes = [
-  { path: 'logout', component: MainLayoutsComponent },];
+  { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
+  { path: 'manage-bills', component: ManageBillsComponent },
+
+  
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

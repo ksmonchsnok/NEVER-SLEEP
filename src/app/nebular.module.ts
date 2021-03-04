@@ -24,6 +24,7 @@ import {
   NbIconModule,
   NbDatepickerModule,
   NbTimepickerModule,  
+  NbSearchModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
@@ -62,6 +63,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbEvaIconsModule,
     NbDatepickerModule,
     NbTimepickerModule,
+    NbSearchModule
   ],
 })
 export class NebularModule {}

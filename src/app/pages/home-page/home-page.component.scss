@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+  
+.card-title {
+  width: 40rem;
+  height: 7rem;
+}
+
+.card-body{
+  height: 18rem !important;
+}
+
+.card-row {
+  display: flex;
+  margin: 0 -0.5rem;
+  max-width: 100%;
+}
+  
+.card-col {
+  flex:calc(50% - 1rem);
+  margin: 0 0.5rem;
+}
+
+.img-card{
+  width: 6rem;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 1.2rem;
+}

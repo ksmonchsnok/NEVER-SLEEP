@@ -1,44 +1,164 @@
-// Layout 
-.nb-theme-default nb-layout-header ~ .layout-container{
+// -------------------------------------- Layout --------------------------------------
+.nb-theme-default nb-layout-header ~ .layout-container {
     background: transparent linear-gradient(to left,  #FCF3F4 15%, #f3c8dd 95%);
 
 }
 
-// Header
-.nb-theme-default nb-layout-header{
+.nb-theme-default nb-layout-header ~ .layout-container {
+    min-height: fit-content !important;
+
+}
+
+// -------------------------------------- Header --------------------------------------
+.nb-theme-default nb-layout-header {
     background: transparent linear-gradient(0deg, #f7c6de 0%, #FCF3F4 100%) 95% 0% no-repeat padding-box !important;
     box-shadow: 0px 3px 10px #EBB5D06D;
 }
 
-.nb-theme-default nb-layout-header nav{
+.nb-theme-default nb-layout-header nav {
     height: 6.5rem !important;
 }
 
-// Nav-Dropdown
+// -------------------------------------- Card --------------------------------------
+.nb-theme-default nb-card {
+    border-radius: 2rem !important;
+}
 
-.nb-theme-default nb-user.size-medium .user-name{
+
+// -------------------------------------- Menu User --------------------------------------
+.nb-theme-default nb-actions {
+    margin-top: 0.5rem;
+}
+
+.nb-theme-default .context-menu-host {
+    min-width: 9rem;
+}
+
+.nb-theme-default nb-user.size-medium .user-name {
     font-size: 1.2rem !important;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-
+    font-weight: 600 !important;
 }
 
-// Sidebar
-.nb-theme-default nb-sidebar{
-    margin-top: 3rem;
-    margin-left: 5rem;
-    margin-bottom: 5rem;
-    // box-shadow: 0px 0px 10px #EBB5D06D;
-    border-radius: 1.5rem;
-    background: transparent linear-gradient(0deg, #fcc2df -5%, #FCF3F4 90%);
+.nb-theme-default nb-user.size-medium .user-title {
+    line-height: 1.5rem;
 }
 
-.nb-theme-default nb-menu ul.menu-items{
+.nb-theme-default nb-user.size-medium .user-picture {
+    width: 3.5rem !important; 
+    height: 3.5rem !important;
+}
+
+
+// -------------------------------------- Nb Menu --------------------------------------
+.nb-theme-default nb-menu ul.menu-items {
     margin-top: 30% !important;
     margin-left: 4% !important;
 }
 
-.nb-theme-default nb-menu .menu-group, .nb-theme-default nb-menu .menu-item a{
+.nb-theme-default nb-menu .menu-group, 
+.nb-theme-default nb-menu .menu-item a {
     font-size: 1rem !important;
     font-weight: 700;
+}
+
+.nb-theme-default nb-menu .menu-item {
+    border: none !important;
+}
+
+.nb-theme-default nb-menu .menu-item a {
+    margin-top: 0.5rem;
+}
+
+.nb-theme-default nb-menu .menu-item a:hover 
+.menu-icon,.nb-theme-default nb-menu .menu-item a.active,
+.nb-theme-default nb-menu .menu-item a.active .menu-icon {
+    color: #ffffff !important;
+}
+
+.nb-theme-default nb-menu .menu-item a:hover,
+.nb-theme-default nb-menu .menu-item a.active {
+    background-color: #EBB5D06D !important;
+    color: #ffffff !important;
+    border-radius: 5rem !important;
+    width: 70%;
+}
+
+
+// -------------------------------------- Sidebar --------------------------------------
+.nb-theme-default nb-sidebar {
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+    border-radius: 1.5rem;
+    background: transparent linear-gradient(0deg, #fcc2df -5%, #FCF3F4 90%);
+}
+
+.nb-theme-default nb-sidebar.compacted nb-menu {
+    margin-top: 4rem;
+}
+
+.nb-theme-default nb-sidebar.expanded {
+    width: 12rem !important;
+    max-height: 40rem;
+}
+
+
+// --------------------------------------  Select Button --------------------------------------
+.nb-theme-default nb-select.appearance-outline.status-basic .select-button {
+    border-radius: 5rem !important;
+
+    background: transparent linear-gradient(90deg, #FFAF90 0%, #F59BF3 100%) 0% 0% no-repeat padding-box !important; 
+    border: none !important;
+}
+
+.nb-theme-default nb-select.appearance-outline.status-basic .select-button.placeholder {
+    color: #ffffff !important;
+}
+
+.nb-theme-default nb-select.appearance-outline.status-basic .select-button nb-icon {
+    color: #ffffff !important;
+}
+
+.nb-theme-default nb-select .select-button {
+    min-width: 9rem !important;
+}
+
+.nb-theme-default nb-select.size-medium:not(.full-width) {
+    margin-left: -2rem;
+}
+
+.nb-theme-default nb-option-list.position-bottom {
+    border-radius: 2rem;
+    padding: 0.6rem 0;
+    background: #ffffff;
+}
+
+.nb-theme-default nb-select.appearance-outline.status-basic .select-button {
+    color: #ffffff !important;
+}
+
+.nb-theme-default nb-option.selected {
+    background-color: #f7c6de !important;
+    color: #000000 !important;
+}
+.nb-theme-default nb-option:hover {
+    background-color: #f8e7e7 !important;
+}
+
+
+// --------------------------------------  Nb-Search --------------------------------------
+.nb-theme-default [nbButton].appearance-ghost.status-basic, .nb-theme-default .appearance-ghost.status-basic[nbButtonToggle] { 
+    padding-right: 15rem !important;
+    border-radius: 10rem;
+}
+
+
+
+.nb-theme-default [nbButton].appearance-ghost.status-basic, .nb-theme-default .appearance-ghost.status-basic[nbButtonToggle],
+.nb-theme-default [nbButton].appearance-ghost.status-basic:hover, .nb-theme-default .appearance-ghost.status-basic[nbButtonToggle]:hover,
+.nb-theme-default [nbButton].appearance-ghost.status-basic:focus, .nb-theme-default .appearance-ghost.status-basic[nbButtonToggle]:focus {
+
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #ffffff !important;
 }

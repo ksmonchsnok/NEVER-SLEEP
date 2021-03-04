@@ -1,5 +1,5 @@
 // Nebular
-@import 'themes';
+@import './custom-theme.scss';
 @import '~@nebular/theme/styles/globals';
 @import './custom-nebular.scss';
 
@@ -11,8 +11,61 @@
 };
 /* You can add global styles to this file, and also import other style files */
 
-
-*{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+*,html {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important ;
+  line-height: unset !important;
+  
 }
+*:focus {
+  outline: none;
+}
+.pointer {
+  cursor: pointer;
+}
+.pointer-none {
+  cursor: pointer;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-block-start: 0.7rem;
+  margin-block-end: 0.7rem;
+}
+
+// ------------------ Button Action ------------------
+
+.model-footer {
+  text-align: center;
+}
+
+.bt-cancel {
+  width: 50%;
+  margin-right: 0.5rem;
+
+}
+
+.bt-save {
+  width: 50%;
+
+}
+
+.bt-delete {
+  width: 50%;
+}
+
+.row{
+  display: flex;
+
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

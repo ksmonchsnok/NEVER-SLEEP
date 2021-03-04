@@ -6,24 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NebularModule } from './nebular.module';
 
-import { MainLayoutsComponent } from './layouts/main-layouts/main-layouts.component';
-import { NavDropdownComponent } from './shared/components/nav-dropdown/nav-dropdown.component';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-import { HomePageComponent } from './layouts/home-page/home-page.component';
-import { ManageBillsComponent } from './layouts/manage-bills/manage-bills.component';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { UserMenuComponent } from './shared/components/user-menu/user-menu.component';
+import { ManageBillsComponent } from './pages/manage-bills/manage-bills.component';
+import { NgbAlertModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainLayoutsComponent,
-    NavDropdownComponent,
-    SidebarComponent,
+    UserMenuComponent,
     HomePageComponent,
     ManageBillsComponent,
   ],
@@ -34,6 +31,9 @@ registerLocaleData(en);
     NebularModule,
     FormsModule,
     HttpClientModule,
+    NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule
   ],
   exports: [
   ],

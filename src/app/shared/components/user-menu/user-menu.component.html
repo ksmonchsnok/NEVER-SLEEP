@@ -1,0 +1,11 @@
+<nb-actions>  
+  <nb-action>
+      <nb-user [name]="userName" [title]="position" [picture]="imgUser"
+                [onlyPicture]="activeMediaQuery == 'xs' ? true : false" 
+                [nbContextMenu]="userMenu" nbContextMenuTag="user-menu">
+      </nb-user>
+    
+      <nb-icon icon="arrow-ios-downward-outline" class="pointer icon-arrow"></nb-icon> 
+
+  </nb-action>
+</nb-actions>
