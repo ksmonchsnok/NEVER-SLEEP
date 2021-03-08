@@ -1,33 +1,43 @@
-<nb-layout>
+<nb-layout> 
+
+<!-- Header -->
     <nb-layout-header fixed>
-  
-      <div class="left-navbar"></div>
+      <div fxLayoutAlign="space-around center" fxLayoutGap="1rem" fxFill>
+
+      <!-- Column Left -->
+          <div fxLayoutAlign="center center left-navbar">
+              <nb-icon icon="people-outline" class="pointer icon-user" (click)="toggleSidebar()"></nb-icon>  
+              <p class="pointer label-titleHeader" (click)="toggleSidebar()" fxHide.sm fxHide.xs >management</p> 
       
-          <nb-icon icon="people-outline" class="pointer icon-user" (click)="toggleSidebar()"></nb-icon>  
-          <label class="pointer label-titleHeader" (click)="toggleSidebar()">management</label> 
-  
-          <nb-search type="rotate-layout" class="searchData" placeholder="Search..."></nb-search> 
-  
-          <nb-select placeholder="All Categories" class="selectData" [selected]="value" (selectedChange)="onSelectCatgories($event)">
-            <nb-option *ngFor="let itemCatagories of itemCatagories" 
-                        [value]='itemCatagories.value'>{{itemCatagories.name}}</nb-option>
-          </nb-select>
-          <label class="preview-onSearch" *ngIf="valueOnSearch">KeyWord : {{ valueOnSearch }}</label>
-  
-          <div class="right-navbar">
-            <nb-icon icon="settings-2-outline" class="pointer icon-setting"></nb-icon>  
-            <nb-icon icon="bell-outline" class="pointer icon-notifications"></nb-icon>  
-            <app-user-menu class="user-navbar"></app-user-menu>
+              <nb-search type="rotate-layout" class="searchData" placeholder="Search..." fxHide.xs></nb-search> 
+      
+              <nb-select placeholder="All Categories" class="selectData" [selected]="value" (selectedChange)="onSelectCatgories($event)" fxHide.sm fxHide.xs>
+                  <nb-option *ngFor="let itemCatagories of itemCatagories" [value]='itemCatagories.value'>{{itemCatagories.name}}</nb-option>
+              </nb-select>
+              <p class="preview-onSearch" *ngIf="valueOnSearch" fxHide.sm fxHide.xs >KeyWord : {{ valueOnSearch }}</p>
           </div>
-            
+
+
+      <!-- Column Right -->
+          <div fxLayoutAlign="center">
+              <nb-icon icon="settings-2-outline" class="pointer icon-setting"></nb-icon>  
+              <nb-icon icon="bell-outline" class="pointer icon-notifications"></nb-icon>   
+              <app-user-menu></app-user-menu>
+              <nb-icon icon="arrow-ios-downward-outline" class="pointer icon-arrow" fxHide.sm fxHide.xs ></nb-icon> 
+          </div>
+
+      </div>
     </nb-layout-header>
      
-      <nb-layout-column class="colored-column-success"> 
+<!-- Column -->
+    <nb-layout-column>
         <router-outlet></router-outlet>
-      </nb-layout-column>  
+    </nb-layout-column>  
   
-    <nb-sidebar  [state]="'expanded'" [responsive]="true" [compactedBreakpoints]="['xs','sm']">
-      <nb-menu [items]="sidebarMenu"></nb-menu>
+
+<!-- Sidebar -->
+    <nb-sidebar  [state]="'expanded'" [responsive]="true"   [compactedBreakpoints]="['xs','sm']">
+        <nb-menu [items]="sidebarMenu"></nb-menu>
     </nb-sidebar>
-  
-  </nb-layout>
+
+</nb-layout>

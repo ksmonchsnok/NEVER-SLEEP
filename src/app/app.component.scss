@@ -1,48 +1,34 @@
-.label-titleHeader{
+.label-titleHeader {
     margin-left: 1rem;
     cursor: pointer;
 }
 
-.label-titleHeader:hover{
+.label-titleHeader:hover {
     color: #7947B5;
 }
 
-::ng-deep .nb-theme-default nb-icon{
-    font-size: 2.5rem;
+.icon-user {
+    width: 5rem !important;
 }
 
-.left-navbar{
-    margin-left: 9%;
-}
-
-.right-navbar{
-    position: absolute;
-    right: 17%;
-}
-
-.user-navbar{
-    position: absolute;
-}
-
-.icon-user{
-    cursor: pointer;
-}
-
-.icon-user:hover{
+.icon-user:hover {
     color: #7947B5 !important;
 }
 
-.searchData{
+.searchData {
     background-color: #FFFFFF;
     border-radius: 10rem;
     margin-left: 5%;
 }   
 
-.preview-onSearch{
+.preview-onSearch {
     margin-left: 1rem;
     color: #8a8a8a;
 }
 
-.colored-column-success{
-    margin-left: 10vh;
+
+@media only screen and (max-width : 650) {
+    .left-navbar{
+        margin-left: 9% !important;
+    }
 }

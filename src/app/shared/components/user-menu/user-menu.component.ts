@@ -5,13 +5,12 @@ import { UserMenu } from 'src/app/core/constants/user-menu';
 import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
-
-
 @Component({
   selector: 'app-user-menu',
   templateUrl: './user-menu.component.html',
   styleUrls: ['./user-menu.component.scss']
 })
+
 export class UserMenuComponent implements OnInit {
   watcher: Subscription;
   userMenu: NbMenuItem[] = UserMenu; 
@@ -20,13 +19,12 @@ export class UserMenuComponent implements OnInit {
   position = "Marketing";
   imgUser = "../../../assets/images/payu.jpg"
 
-  constructor(
+constructor(
     private mediaObserver: MediaObserver,
     private nbMenuService: NbMenuService,
     private router: Router,
-
-
-  ) { 
+  ) 
+  { 
     this.watcher = this.mediaObserver.media$.subscribe(
       (change: MediaChange) => {
         this.activeMediaQuery = change.mqAlias;
@@ -38,6 +36,7 @@ export class UserMenuComponent implements OnInit {
     this.userActionMenu();
 
   }
+    
   userActionMenu() {
     this.nbMenuService.onItemClick().pipe(filter(({ tag }) => tag === 'user-menu'),map(({ item: { title } }) => title)
       )
@@ -55,5 +54,5 @@ export class UserMenuComponent implements OnInit {
         }
       });
   }
- 
+
 }

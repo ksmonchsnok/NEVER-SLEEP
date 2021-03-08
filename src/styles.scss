@@ -1,33 +1,56 @@
-// Nebular
-@import './custom-theme.scss';
+/* Importing Nenular SCSS file. */
+@import 'custom-theme.scss';
+@import 'custom-nebular.scss';
 @import '~@nebular/theme/styles/globals';
-@import './custom-nebular.scss';
 
-// Front
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
+/* You can add global styles to this file, and also import other style files */
 @include nb-install() {
   @include nb-theme-global();
 };
-/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Google Front. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 
 *,html {
   font-family: 'Poppins', sans-serif !important;
-  font-weight: 600 !important ;
+  font-weight: 700 !important ;
   line-height: unset !important;
   
 }
+
 *:focus {
   outline: none;
 }
+
 .pointer {
   cursor: pointer;
 }
+
 .pointer-none {
-  cursor: pointer;
+  cursor: none;
 }
+
+// ------------------  Layouts ---------------------
+.container {
+  display: grid;
+  align-content: space-around;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto auto;
+}
+
+.row {
+  display: flex;
+}
+
+// ------------------  Alignment --------------------
 .text-center {
   text-align: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .text-left {
@@ -37,35 +60,30 @@
   text-align: right;
 }
 
-h1,h2,h3,h4,h5,h6 {
+// --------------------  Front -----------------------
+h1,h2,h3,h4,h5,h6 ,label,p {
   margin-block-start: 0.7rem;
   margin-block-end: 0.7rem;
 }
 
+.text-color-default {
+    color: #7947B5;
+}
 // ------------------ Button Action ------------------
+.bt-cancel,.bt-delete,.bt-save {
+  width: 50%;
 
-.model-footer {
-  text-align: center;
 }
-
 .bt-cancel {
-  width: 50%;
   margin-right: 0.5rem;
-
 }
 
-.bt-save {
-  width: 50%;
-
+.ngb-dp-weekday {
+  color: #9E43B8 !important;
+  border: none !important;
+  background-color: #fff !important;
+}
+.bg-primary {
+  background-color: #9E43B8 !important;
 }
 
-.bt-delete {
-  width: 50%;
-}
-
-.row{
-  display: flex;
-
-}
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';

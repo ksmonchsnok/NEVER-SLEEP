@@ -1,17 +1,16 @@
-<nb-card class="card-title">
+<nb-card class="card-welcome">
     <nb-card-body>
-        Hi, <span style="color: #7947B5;">Linna Li</span>
-        <br>
-        Have a nice day at work.
+      <h1> Hi, <span class="text-color-default"> Linna Li </span></h1>  
+        
+      <h6> Have a nice day at work. </h6> 
     </nb-card-body>
   </nb-card>
 
-
   <h2>My Work</h2>
-  <div class="card-row text-center">
+  <div class="card-row text-center" fxLayout="row" fxLayoutAlign="space-around center" fxFill>
     <div class="card-col" *ngFor="let WorkItems of WorkItems">
-      <nb-card size="small" class="pointer card-body" (click)="openAddWorkDialog(addWorkItems)">
-        <nb-card-body >
+      <nb-card size="small" class="pointer card-work" (click)="openAddWorkDialog(addWorkItems)">
+        <nb-card-body>
           <img [src]="WorkItems.img" [alt]="WorkItems.name"  class="img-card">
           <h3>{{WorkItems.name}}</h3>
           <h6>{{WorkItems.description}}</h6>
@@ -27,63 +26,63 @@
 <div class="card-row">
   
 <!-- Content left -->
-    <div class="card-col">  
-
-    <!-- Row 1 -->
-    <div class="card-row">
-        <div class="card-col">
-            <h5>รายได้ (income)</h5>
-            <p>$ 123,456.-</p> 
-        </div> 
-        <div class="card-col">
-            <h5>รายจ่าย (Expend)</h5>
-            <p>$ 12,345.-</p> 
-        </div>
-    </div>
-
+  <!-- Row 1 -->
+  <div  fxLayout="column" fxLayoutAlign="space-around center" >
+      <div class="card-row">
+          <div class="card-col incomeCard">
+              <h4> รายได้ (Income) </h4>
+              <h5> $ 123,456.- </h5> 
+          </div> 
+          <div class="card-col expendCard">
+              <h4>รายจ่าย (Expend)</h4>
+              <h5> $ 12,345.- </h5> 
+          </div>
+      </div>
 
     <!-- Row 2 -->
-    <div class="card-row">
-        <div class="card-col">
-            <nb-card class="text-center">
-              <nb-card-body>
-                  <p>ยอดคงเหลือสุทธิ ( Net balance )</p>
-                  <h2>$ 12,345.-</h2> 
-              </nb-card-body>
-            </nb-card>
-        </div>
-    </div>
+      <div class="card-row">
+          <div class="card-col">
+              <nb-card class="card-total text-center">
+                <nb-card-body>
+                    <h5 class="title-netBalance"> ยอดคงเหลือสุทธิ ( Net balance ) </h5>
+                    <h1> <span class="text-color-default"> $ 123,456.- </span> </h1> 
+                </nb-card-body>
+              </nb-card>
+          </div>
+      </div>
 
-</div>
+  </div>
+  
 
 <!-- Content Right -->
     <div class="card-col"> 
-      <nb-card size="large">
+      <nb-card size="large" class="card-total">
         <nb-card-body>
-              <h3>Schedule Calendar</h3> 
-              <input nbInput placeholder="Pick Date" [nbDatepicker]="dateTimePicker">
-                
-              <!-- <ngb-datepicker [(ngModel)]="model"></ngb-datepicker> -->
-
-              <nb-datepicker #dateTimePicker></nb-datepicker>
+            <div class="row text-center" fxLayout="row" fxLayoutAlign="space-between center">
+                <h3 class="title-calendar"> Schedule Calendar </h3>               
+                <button nbButton fullWidth  status="primary" shape="round" class="bt-select-date" (click)="selectToday()"> Select Today </button>
+            </div>
+              
+              <div class="datePicker text-center">
+                <ngb-datepicker [(ngModel)]="model" (navigate)="model == $event.next"></ngb-datepicker>
+              </div>
               
         </nb-card-body>
       </nb-card>
          
     </div>
- 
-
 </div>
-
 
 <!-- Template Model Part -->
   <ng-template #addWorkItems let-data let-ref="dialogRef">
       <nb-card>
-        <nb-card-header><h4>Add New Work</h4></nb-card-header>
-            <nb-card-body><input type="text" nbInput fullWidth shape="round" placeholder="Work Name"></nb-card-body>
-        <nb-card-footer class="row model-footer">
-          <button nbButton right  status="danger" shape="round" class="bt-cancel" (click)="ref.close()">Cancel</button>
-          <button nbButton right  status="primary" shape="round"  class="bt-save" (click)="ref.close()">Save</button>
-        </nb-card-footer>
+          <nb-card-header><h4>Add New Work</h4></nb-card-header>
+
+          <nb-card-body><input type="text" nbInput fullWidth shape="round" placeholder="Work Name"></nb-card-body>
+
+          <nb-card-footer fxLayout="row" fxLayoutAlign="space-around center">
+            <button nbButton  status="danger" shape="round" class="bt-cancel" (click)="ref.close()"> Cancel </button>
+            <button nbButton  status="success" shape="round"  class="bt-save" (click)="ref.close()"> Save </button>
+          </nb-card-footer>
       </nb-card>
   </ng-template>
