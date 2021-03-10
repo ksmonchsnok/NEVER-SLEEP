@@ -56,7 +56,7 @@
     margin-left: 4% !important;
 }
 
-.nb-theme-default nb-menu .menu-group, 
+.nb-theme-default nb-menu .menu-group,
 .nb-theme-default nb-menu .menu-item a {
     font-size: 1rem !important;
     font-weight: 700;
@@ -70,7 +70,7 @@
     margin-top: 0.5rem;
 }
 
-.nb-theme-default nb-menu .menu-item a:hover 
+.nb-theme-default nb-menu .menu-item a:hover
 .menu-icon,.nb-theme-default nb-menu .menu-item a.active,
 .nb-theme-default nb-menu .menu-item a.active .menu-icon {
     color: #ffffff !important;
@@ -97,14 +97,14 @@
 
 .nb-theme-default nb-sidebar.expanded {
     width: 12rem !important;
-    max-height: 40rem;
+    // max-height: 40rem;
 }
 
 // --------------------------------------  Select Button --------------------------------------
 .nb-theme-default nb-select.appearance-outline.status-basic .select-button {
     border-radius: 5rem !important;
 
-    background: transparent linear-gradient(90deg, #FFAF90 0%, #F59BF3 100%) 0% 0% no-repeat padding-box !important; 
+    background: transparent linear-gradient(90deg, #FFAF90 0%, #F59BF3 100%) 0% 0% no-repeat padding-box !important;
     border: none !important;
 }
 
@@ -144,7 +144,7 @@
 
 
 // --------------------------------------  Nb-Search --------------------------------------
-.nb-theme-default [nbButton].appearance-ghost.status-basic, .nb-theme-default .appearance-ghost.status-basic[nbButtonToggle] { 
+.nb-theme-default [nbButton].appearance-ghost.status-basic, .nb-theme-default .appearance-ghost.status-basic[nbButtonToggle] {
     padding-right: 15rem !important;
     border-radius: 10rem;
 }

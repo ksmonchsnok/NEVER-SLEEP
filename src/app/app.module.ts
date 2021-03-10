@@ -15,6 +15,8 @@ import { UserMenuComponent } from './shared/components/user-menu/user-menu.compo
 import { ManageBillsComponent } from './pages/manage-bills/manage-bills.component';
 import { NgbAlertModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ThDatePipe } from './shared/pipes/th-date.pipe';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 registerLocaleData(en);
 
@@ -24,6 +26,7 @@ registerLocaleData(en);
     UserMenuComponent,
     HomePageComponent,
     ManageBillsComponent,
+    ThDatePipe
   ],
   imports: [
     FlexLayoutModule,
@@ -35,9 +38,12 @@ registerLocaleData(en);
     HttpClientModule,
     NgbModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    NgxDatatableModule,
   ],
   exports: [
+    ThDatePipe,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

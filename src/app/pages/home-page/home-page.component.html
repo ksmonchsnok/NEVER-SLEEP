@@ -1,8 +1,8 @@
 <nb-card class="card-welcome">
     <nb-card-body>
-      <h1> Hi, <span class="text-color-default"> Linna Li </span></h1>  
-        
-      <h6> Have a nice day at work. </h6> 
+      <h1> Hi, <span class="text-color-default"> Linna Li </span></h1>
+
+      <h6> Have a nice day at work. </h6>
     </nb-card-body>
   </nb-card>
 
@@ -21,21 +21,21 @@
   </div>
 
 
- <h2>Total <small>{{ currentDate }}</small></h2>
+ <h2>Total <small>{{ currentDate | thDate | date: "dd MMMM, YYYY" }}</small></h2>
 
 <div class="card-row">
-  
+
 <!-- Content left -->
   <!-- Row 1 -->
   <div  fxLayout="column" fxLayoutAlign="space-around center" >
       <div class="card-row">
           <div class="card-col incomeCard">
               <h4> รายได้ (Income) </h4>
-              <h5> $ 123,456.- </h5> 
-          </div> 
+              <h5> $ 123,456.- </h5>
+          </div>
           <div class="card-col expendCard">
               <h4>รายจ่าย (Expend)</h4>
-              <h5> $ 12,345.- </h5> 
+              <h5> $ 12,345.- </h5>
           </div>
       </div>
 
@@ -45,31 +45,31 @@
               <nb-card class="card-total text-center">
                 <nb-card-body>
                     <h5 class="title-netBalance"> ยอดคงเหลือสุทธิ ( Net balance ) </h5>
-                    <h1> <span class="text-color-default"> $ 123,456.- </span> </h1> 
+                    <h1> <span class="text-color-default"> $ 123,456.- </span> </h1>
                 </nb-card-body>
               </nb-card>
           </div>
       </div>
 
   </div>
-  
+
 
 <!-- Content Right -->
-    <div class="card-col"> 
+    <div class="card-col">
       <nb-card size="large" class="card-total">
         <nb-card-body>
             <div class="row text-center" fxLayout="row" fxLayoutAlign="space-between center">
-                <h3 class="title-calendar"> Schedule Calendar </h3>               
+                <h3 class="title-calendar"> Schedule Calendar </h3>
                 <button nbButton fullWidth  status="primary" shape="round" class="bt-select-date" (click)="selectToday()"> Select Today </button>
             </div>
-              
+
               <div class="datePicker text-center">
                 <ngb-datepicker [(ngModel)]="model" (navigate)="model == $event.next"></ngb-datepicker>
               </div>
-              
+
         </nb-card-body>
       </nb-card>
-         
+
     </div>
 </div>
 

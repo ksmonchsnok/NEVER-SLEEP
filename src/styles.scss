@@ -11,15 +11,20 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+/* Importing ngx-datatable */
+@import "~@swimlane/ngx-datatable/index.css";
+@import "~@swimlane/ngx-datatable/themes/material.scss";
+@import "~@swimlane/ngx-datatable/assets/icons.css";
+
+
 /* Importing Google Front. */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
 
 *,html {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 700 !important ;
   line-height: unset !important;
-  
+
 }
 
 *:focus {

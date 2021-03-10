@@ -3,7 +3,7 @@
   overflow-x: auto;
   overflow-y: auto;
 }
-  
+
 .card-welcome {
   width: 70%;
   height: 10rem;
@@ -15,13 +15,10 @@
   height: 20rem !important;
   min-width: 15rem;
   max-width: 20rem;
-  
 }
 
 .card-total {
   padding:2rem 4rem;
-  
-
 }
 
 .card-row {
@@ -32,7 +29,7 @@
   align-content: center;
   justify-content: center;
 }
-  
+
 .card-col {
   // flex:calc(50% - 1rem);
   margin: 0 2rem;
@@ -68,20 +65,43 @@
   margin-bottom: 1rem;
 }
 
+
+@media only screen and (max-width : 768px) {
+  .card-welcome {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+
+
 @media only screen and (max-width : 550px) {
-  .card-welcome { 
+  .card-welcome {
     width: 100%;
     margin-top: 2rem;
   }
 
   h4 {
     font-size: 1rem;
-
   }
+
   h5 {
     font-size: 0.9rem;
   }
+
   h1 {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width : 400px) {
+  h4,h5 {
+    font-size: 0.8em;
+  }
+
+  h1 {
+    font-size: 1.2rem;
   }
 }

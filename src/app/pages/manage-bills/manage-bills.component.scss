@@ -1,0 +1,35 @@
+.icon-bills {
+  margin-top: 2rem;
+}
+
+.lable-approve {
+  margin-left: 0.5rem;
+  margin-top: -0.2rem;
+}
+
+// @media screen and (max-width: 800px) {
+//   .desktop-hidden {
+//     display: initial;
+//   }
+//   .mobile-hidden {
+//     display: none;
+//   }
+// }
+// @media screen and (min-width: 800px) {
+//   .desktop-hidden {
+//     display: none;
+//   }
+//   .mobile-hidden {
+//     display: initial;
+//   }
+// }
+
+
+.ngx-datatable.material .datatable-footer .page-count::after {
+  content: 'Total';
+}
+
+// .ngx-datatable.scroll-vertical .datatable-body {
+//   overflow-y: hidden;
+// }
+

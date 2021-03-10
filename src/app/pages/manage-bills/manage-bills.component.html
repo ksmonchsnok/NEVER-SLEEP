@@ -1,1 +1,231 @@
-<p>manage-bills works!</p>
+<h2>
+  <nb-icon icon="clipboard-outline" class="icon-bills"></nb-icon> All Bills
+</h2>
+
+  <nb-card size="large" class="card-total">
+    <nb-card-body>
+      <div
+        class=" text-center"
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+      >
+        <h3 class="title-calendar">Select Date</h3>
+        <button
+          nbButton
+          status="primary"
+          shape="round"
+          class="bt-select-date"
+          (click)="selectToday()"
+        >
+          Select Today
+        </button>
+      </div>
+
+      <div class="datePicker text-center">
+        <ngb-datepicker
+          [(ngModel)]="model"
+          (navigate)="(model == $event.next)"
+        ></ngb-datepicker>
+      </div>
+    </nb-card-body>
+  </nb-card>
+
+
+<h3 class="title-calendar">รายการบิลทั้งหมด {{currentDate | thDate | date: "dd MMMM, YYYY" }}</h3>
+
+<ngx-datatable
+  class="material expandable"
+  [columnMode]="'flex'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="50"
+  [limit]="5"
+  [scrollbarV]="true"
+  [rows]="allBillsList"
+  [sorts]="[{ prop: 'id', dir: 'desc' }]"
+  [messages]="{ emptyMessage: 'No data' }"
+  (page)="onPage($event)"
+
+>
+  <ngx-datatable-column
+    name="การอนุมัติ"
+    prop="approve"
+    [flexGrow]="3"
+    [sortable]="true"
+    [resizeable]="false"
+    [draggable]="false"
+    [canAutoResize]="false"
+  >
+    <ng-template let-row="row"  let-expanded="expanded"  ngx-datatable-cell-template>
+
+
+        <div *ngIf="row.approve === 'อนุมัติ'" class="row"
+        (click)="toggleExpandRow(row)"
+        >
+          <nb-icon icon="radio-button-off"
+          style="color: green; background-color: green; border-radius: 50%; width: 0.4em;
+          height: 0.4em;">
+          </nb-icon>
+         <span class="lable-approve"> {{ row.approve }} </span>
+          </div>
+
+        <div *ngIf="row.approve === 'ไม่อนุมัติ'" class="row"
+        (click)="toggleExpandRow(row)">
+            <nb-icon icon="radio-button-off"
+            style="color: red; background-color: red; border-radius: 50%; width: 0.4em;
+            height: 0.4em;">
+            </nb-icon>
+           <span class="lable-approve"  [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }"> {{ row.approve }} </span>
+            </div>
+    </ng-template>
+
+
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="ลำดับ"
+    prop="id"
+    [flexGrow]="2"
+    [sortable]="true"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template  >
+    <span (click)="toggleExpandRow(row)" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }">{{ row.id }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="เลขที่บิล"
+    prop="bills_no"
+    [flexGrow]="7"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <span  (click)="toggleExpandRow(row)"[ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }">{{ row.bills_no }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="รายการ"
+    prop="list_name"
+    [flexGrow]="5"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template >
+      <span (click)="toggleExpandRow(row)" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }">{{ row.list_name }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="หมวดหมู่"
+    prop="catgoeries"
+    [flexGrow]="5"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <span (click)="toggleExpandRow(row)" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }">{{ row.catgoeries }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="ประเภท"
+    prop="type"
+    [flexGrow]="5"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <span (click)="toggleExpandRow(row)" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }">{{ row.type }} </span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="จำนวน"
+    prop="amount"
+    [flexGrow]="2"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template  >
+      <span (click)="toggleExpandRow(row)" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }"> {{ row.amount }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="ราคา / ชิ้น"
+    prop="price"
+    [flexGrow]="2"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template >
+      <span  (click)="toggleExpandRow(row)" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }"> {{ row.price }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="ราคารวม"
+    prop="total"
+    [flexGrow]="2.5"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template >
+      <span  (click)="toggleExpandRow(row)" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }"> {{ row.total }} </span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="วันหมดอายุ"
+    prop="exprice_date"
+    [flexGrow]="2"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template >
+      <span  (click)="toggleExpandRow(row)" ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }"> {{ row.exprice_date | thDate | date: "dd-MMM-yyy" }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="จัดการ"
+    [flexGrow]="3"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <div
+        fxLayout
+        fxLayoutAlign="start center"
+        fxLayoutGap="0.5rem"
+        class="button-group"
+      >
+          <nb-icon icon="file-text-outline" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }"></nb-icon>
+          <nb-icon icon="trash-2-outline" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }"></nb-icon>
+      </div>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column
+    name="หมายเหตุ"
+    [flexGrow]="2.3"
+    [sortable]="false"
+    [resizeable]="false"
+  >
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <div
+        fxLayout
+        fxLayoutAlign="start center"
+        fxLayoutGap="0.5rem"
+        class="button-group"
+      >
+          <nb-icon icon="edit-outline" [ngStyle]=" { 'color' : (row.approve === 'ไม่อนุมัติ') ? 'red' : 'black' }"></nb-icon>
+      </div>
+    </ng-template>
+  </ngx-datatable-column>
+
+
+</ngx-datatable>
